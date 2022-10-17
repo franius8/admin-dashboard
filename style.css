@@ -22,7 +22,8 @@ body {
     background-color: var(--secondary-color);
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2%;
+    overflow: scroll;
 }
 
 #logodiv {
