@@ -198,7 +198,7 @@ button:hover {
     border-radius: 1rem;
     box-shadow: 3px 3px 3px lightgray;
     display: grid;
-    grid-template: 2fr 1fr / 1fr 39fr;
+    grid-template: 3fr 1fr / 1fr 39fr;
     gap: 1rem;
     cursor: pointer;
 }
@@ -213,14 +213,6 @@ button:hover {
     border-radius: 1rem 0 0 1rem;
 }
 
-.projectcard::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2%;
-    background-color: red;
-}
-
 .iconstripe {
     padding: 0 1rem 1rem 0;
     display: flex;
@@ -232,4 +224,17 @@ button:hover {
 .iconstripe img {
     height: 2rem;
     cursor: pointer;
+}
+
+.projectcontent {
+    color: rgb(100, 100, 100);
+    padding-right: 1rem;
+    margin: 0;
+}
+
+.projectcontent p:first-child {
+    color: black;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
 }
