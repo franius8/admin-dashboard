@@ -156,8 +156,26 @@ button:hover {
 #content {
     display: grid;
     grid-template: 1fr 1fr / 3fr 1fr;
+    color: black;
+    padding: 2rem 1rem;
 }
 
 #projects {
     grid-area: 1 / 1 / span 2 / 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.headertext {
+    font-size: 1.5rem;
+}
+
+#cardcontainer {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.projectcard {
+    background-color: white;
 }
