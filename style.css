@@ -4,6 +4,8 @@
     --text-color: white;
     --hover-color: #4c1d95;
     --search-field-outline: #a78bfa;
+    --label-stripe: #4c1d95;
+    --card-hover-color: #f6f5fc;
   }
 
 body {
@@ -22,8 +24,7 @@ body {
     background-color: var(--secondary-color);
     display: flex;
     flex-direction: column;
-    gap: 2%;
-    overflow: scroll;
+    gap: 3%;
 }
 
 #logodiv {
@@ -33,7 +34,9 @@ body {
     align-items: center;
     justify-content: left;
     padding: 1rem 2rem 1rem 1rem; 
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+    cursor: pointer;
 }
 
 .sidebarcontentdiv {
@@ -50,7 +53,7 @@ body {
     align-items: center;
     justify-content: left;
     font-size: 1.4rem;
-    padding: 1rem;
+    padding: 0.6rem 1rem;
 }
 
 .sidebarcontent:hover {
@@ -130,7 +133,7 @@ button {
     background-color: var(--secondary-color);
     color: white;
     border: 1px solid var(--secondary-color);
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 2.5rem;
     border-radius: 2rem;
     cursor: pointer;
     font-family: inherit;
@@ -158,7 +161,8 @@ button:hover {
     display: grid;
     grid-template: 1fr 1fr / 3fr 1fr;
     color: black;
-    padding: 2rem 1rem;
+    padding: 2rem 2rem 2rem 1rem;
+    gap: 2rem;
 }
 
 #projects {
@@ -167,8 +171,20 @@ button:hover {
     flex-direction: column;
 }
 
+#announcements {
+    grid-area: 1 / 2 / 1 / 2;
+}
+
+#announcementcontainer, #trendingcontainer {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 3px lightgray;
+    padding: 1rem;
+}
+
 .headertext {
     font-size: 1.5rem;
+    padding-bottom: 1rem;
 }
 
 #cardcontainer {
@@ -179,4 +195,41 @@ button:hover {
 
 .projectcard {
     background-color: white;
+    border-radius: 1rem;
+    box-shadow: 3px 3px 3px lightgray;
+    display: grid;
+    grid-template: 2fr 1fr / 1fr 39fr;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.projectcard:hover {
+    background-color: var(--card-hover-color);
+}
+
+.labelstripe {
+    background-color: var(--label-stripe);
+    grid-area: 1 / 1 / span 2 / 1;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.projectcard::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2%;
+    background-color: red;
+}
+
+.iconstripe {
+    padding: 0 1rem 1rem 0;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.iconstripe img {
+    height: 2rem;
+    cursor: pointer;
 }
