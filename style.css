@@ -6,13 +6,13 @@
     --search-field-outline: #a78bfa;
     --label-stripe: #4c1d95;
     --card-hover-color: #f6f5fc;
+    --grey-text: #787878;
   }
 
 body {
-    height: 100vh;
-    overflow: hidden;
+    overflow: auto;
     display: grid;
-    grid-template: 1fr / 1fr 4fr;
+    grid-template: 1fr / 1fr 4.8fr;
     margin: 0;
     padding: 0;
     font-family: Kanit, Verdana, Geneva, Tahoma, sans-serif;
@@ -25,18 +25,23 @@ body {
     display: flex;
     flex-direction: column;
     gap: 3%;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #logodiv {
-    font-size: 2rem;
+    font-size: 1.8rem;
     display: grid;
     grid-template: 1fr / 1fr 3fr;
     align-items: center;
     justify-content: left;
-    padding: 1rem 2rem 1rem 1rem; 
+    padding: 1rem 2rem 1rem 0.8rem; 
     font-weight: 600;
     letter-spacing: 0.15rem;
     cursor: pointer;
+    gap: 0.25rem;
 }
 
 .sidebarcontentdiv {
@@ -53,7 +58,7 @@ body {
     align-items: center;
     justify-content: left;
     font-size: 1.4rem;
-    padding: 0.6rem 1rem;
+    padding: 0.6rem 0.8rem;
 }
 
 .sidebarcontent:hover {
@@ -62,7 +67,7 @@ body {
 }
 
 #logoicon {
-    height: 3.5rem;
+    height: 2.7rem;
     margin: auto;
 }
 
@@ -97,18 +102,14 @@ body {
     font-size: 1.3rem;
 }
 
-#content {
-    background-color: var(--main-bg-color);
-}
-
 #searchbar {
     background-color: var(--main-bg-color);
     border: 1px solid var(--main-bg-color);
     border-radius: 2rem;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     font-family: inherit;
     height: 2rem;
-    width: 80%;
+    width: 25vw;
 }
 
 #searchbar:focus {
@@ -117,9 +118,9 @@ body {
     box-shadow: 0 0 5px var(--search-field-outline);
 }
 
-.profile_photo {
+.profile_photo, .trendingphoto {
     border-radius: 50%;
-    height: 3rem;
+    height: 3.5rem;
     cursor: pointer;
 }
 
@@ -159,27 +160,35 @@ button:hover {
 
 #content {
     display: grid;
-    grid-template: 1fr 1fr / 3fr 1fr;
+    grid-template: auto / 3fr 1fr;
     color: black;
     padding: 2rem 2rem 2rem 1rem;
     gap: 2rem;
+    overflow: auto;
+    background-color: var(--main-bg-color);
 }
 
 #projects {
-    grid-area: 1 / 1 / span 2 / 1;
     display: flex;
     flex-direction: column;
 }
 
-#announcements {
-    grid-area: 1 / 2 / 1 / 2;
+#rightbar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#announcements, #trending {
+    display: flex;
+    flex-direction: column;
 }
 
 #announcementcontainer, #trendingcontainer {
     background-color: white;
     border-radius: 1rem;
     box-shadow: 3px 3px 3px lightgray;
-    padding: 1rem;
+    overflow: hidden;
 }
 
 .headertext {
@@ -200,7 +209,6 @@ button:hover {
     display: grid;
     grid-template: 3fr 1fr / 1fr 39fr;
     gap: 1rem;
-    cursor: pointer;
 }
 
 .projectcard:hover {
@@ -227,7 +235,7 @@ button:hover {
 }
 
 .projectcontent {
-    color: rgb(100, 100, 100);
+    color: var(--grey-text);
     padding-right: 1rem;
     margin: 0;
 }
@@ -237,4 +245,51 @@ button:hover {
     font-size: 1.4rem;
     font-weight: 500;
     margin-bottom: 0.75rem;
+}
+
+.announcement {
+    border-bottom: 1px solid var(--grey-text);
+    padding: 1.5rem;
+}
+
+.announcement:hover {
+    background-color: var(--card-hover-color);
+}
+
+.announcement:last-child {
+    border-bottom: none;
+}
+
+.announcement, .announcement p {
+    color: var(--grey-text);
+    margin: 0;
+}
+
+.announcement p:first-child {
+    color: black;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.trendingitem {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.trendingitem:hover {
+    background-color: var(--card-hover-color);
+}
+
+.trendingtext p{
+    font-weight: 300;
+    line-height: 1.2rem;
+    color: var(--grey-text);
+    margin: 0;
+}
+
+.trendingtext p:first-child {
+    color: black;
 }
